@@ -1,0 +1,27 @@
+.power-btn{
+    border-radius:65px ;
+    height: 65px;
+    width: 65px;
+    margin-bottom: 0px;
+}
+ .power-btn i{
+ color: red;
+ font-size: 50px;
+ margin-left: -5px;
+ text-shadow: 2px 0px 10px red;
+}
+/*.power-btn i{
+    color: greenyellow;
+    font-size: 50px;
+    margin-left: -5px;
+    text-shadow: 2px 0px 10px greenyellow;
+   }*/
+
+.info-btn{
+    margin-right: 10px;
+}
+.navbar{
+    padding: 0px;
+    border-top-left-radius: 40px;
+    border-bottom-left-radius: 40px;
+}
