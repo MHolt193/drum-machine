@@ -4,7 +4,7 @@ import './App.css';
 
 function App() {
   return (
-    <div className="container contsiner-fluid">
+    <div className="container container-fluid">
       <NavBar />
     </div>
   );
