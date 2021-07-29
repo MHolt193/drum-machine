@@ -3,22 +3,26 @@
     height: 65px;
     width: 65px;
     margin-bottom: 0px;
+    margin-left: -10px;
 }
- .power-btn i{
+ .off i{
  color: red;
  font-size: 50px;
+ margin-top: 1px;
  margin-left: -5px;
  text-shadow: 2px 0px 10px red;
 }
-/*.power-btn i{
+.on i{
     color: greenyellow;
     font-size: 50px;
     margin-left: -5px;
     text-shadow: 2px 0px 10px greenyellow;
-   }*/
+   }
 
 .info-btn{
-    margin-right: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .navbar{
     padding: 0px;

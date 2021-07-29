@@ -1,31 +1,61 @@
-import './NavBar.css'
-const NavBar = () => {
-return (
-    <div className="navbar fixed-top navbar-dark bg-dark navbar-expand">
-        <button className='btn navbar-brand power-btn'><i className="fas fa-power-off"></i></button>
-        <ul className='navbar-nav ms-auto'>
-            <li className='nav-item dropdown'>
-                <button className='nav-link dropdown-toggle btn' data-bs-toggle="dropdown" aria-expanded="false" href="#">
-                <i class="fas fa-volume-up"></i>
-                </button>
-            </li>
-            <li className='nav-item dropdown'>
-                <button className='nav-link dropdown-toggle btn'>
-                <i class="fas fa-compact-disc"></i>
-                </button>
-                <ul className='dropdown-menu'>
-                  <li><button className='dropdown-item' href="#">Drums</button></li> 
-                </ul>
-            </li>
-            <li className='nav-item'>
-                <button className='nav-link info-btn btn' roll="button" href="#">
-                <i class="fas fa-info-circle"></i>
-                </button>
-            </li>
+import "./NavBar.css";
+import Volume from "./Volume";
+import Navbar from "react-bootstrap/Navbar";
+import Container from "react-bootstrap/Container";
+import Nav from "react-bootstrap/Nav";
+import NavDropdown from "react-bootstrap/NavDropdown";
+import "bootstrap/dist/css/bootstrap.min.css";
+const NavBar = (props) => {
+  return (
+    <Navbar className="ms-5 fixed-top navbar-dark" bg="dark">
+      <Container>
+        {
+          //Power Control
+          props.power === "false" ? (
+            <Navbar.Brand
+              className="btn power-btn off"
+              href="#"
+              onClick={props.powerHandler}
+            >
+              <i className="fas fa-power-off"></i>
+            </Navbar.Brand>
+          ) : (
+            <Navbar.Brand
+              className="btn power-btn on"
+              href="#"
+              onClick={props.powerHandler}
+            >
+              <i className="fas fa-power-off"></i>
+            </Navbar.Brand>
+          )
+        }
+          <Nav className="ms-auto">
+            <NavDropdown
+              className="btn"
+              title={<i class="fas fa-volume-up"></i>}
+            >
+              <NavDropdown.Item>
+                <Volume onChange={props.volumeHandler} />
+              </NavDropdown.Item>
+            </NavDropdown>
+            <NavDropdown
+              className="btn"
+              title={<i class="fas fa-compact-disc"></i>}
+              onChange={props.modeHandler}
+            >
+              <NavDropdown.Item>Drums</NavDropdown.Item>
+              <NavDropdown.Divider />
+              <NavDropdown.Item>Guitar</NavDropdown.Item>
+              <NavDropdown.Divider />
+              <NavDropdown.Item>Piano</NavDropdown.Item>
+            </NavDropdown>
+            <Nav.Link className="info-btn btn">
+              <i class="fas fa-info-circle"></i>
+            </Nav.Link>
+          </Nav>
+      </Container>
+    </Navbar>
+  );
+};
 
-        </ul>
-    </div>
-)
-}
-
-export default NavBar
+export default NavBar;
