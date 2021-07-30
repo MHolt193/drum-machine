@@ -10,7 +10,7 @@ class App extends React.Component {
       mode: 'Guitar',
       volume: '0.5',
       power: 'false',
-      sound: ''
+      sound: 'Loading...'
     }
     this.modeHandler = this.modeHandler.bind(this);
     this.volumeHandler = this.volumeHandler.bind(this);
@@ -29,7 +29,7 @@ class App extends React.Component {
     return (
       <div className="container container-fluid" id="drum-machine">
         <NavBar modeHandler={this.modeHandler} volumeHandler={this.volumeHandler} powerHandler={this.powerHandler} power={this.state.power} />
-        <Display value={this.state.sound} />
+        <Display value={this.state.sound} power={this.state.power} />
         <KeyPad mode={this.state.mode} power={this.state.power} />
       </div>
     );

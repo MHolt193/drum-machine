@@ -8,12 +8,12 @@ import "bootstrap/dist/css/bootstrap.min.css";
 const NavBar = (props) => {
   return (
     <Navbar className="ms-5 fixed-top navbar-dark" bg="dark">
-      <Container>
+      <Container fluid='fluid'>
         {
           //Power Control
           props.power === "false" ? (
             <Navbar.Brand
-              className="btn power-btn off"
+              className="btn navbar-brand power-btn off"
               href="#"
               onClick={props.powerHandler}
             >
@@ -21,7 +21,7 @@ const NavBar = (props) => {
             </Navbar.Brand>
           ) : (
             <Navbar.Brand
-              className="btn power-btn on"
+              className="btn navbar-brand power-btn on"
               href="#"
               onClick={props.powerHandler}
             >

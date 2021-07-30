@@ -28,7 +28,7 @@
   justify-content: center;
   align-items: center;
   font-family: "Press Start 2P", cursive;
-  font-size: 40px;
+  font-size: 35px;
   color: rgb(231, 231, 231);
   padding-top: 20px;
   border-radius: 10px;
@@ -37,5 +37,41 @@
 }
 .display p{
     letter-spacing:-3px;
+}
+
+.display-off{
+    margin-top: 120px;
+  background: rgb(101, 135, 133);
+  background: -moz-linear-gradient(
+    150deg,
+    rgb(132, 133, 133) 7%,
+    rgb(219, 219, 219) 41%,
+    rgb(167, 167, 167) 61%
+  );
+  background: -webkit-linear-gradient(
+    150deg,
+    rgb(132, 133, 133) 7%,
+    rgb(219, 219, 219) 41%,
+    rgb(167, 167, 167) 61%
+  );
+  background: linear-gradient(
+    150deg,
+    rgb(132, 133, 133) 7%,
+    rgb(219, 219, 219) 41%,
+    rgb(167, 167, 167) 61%
+  );
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#658785",endColorstr="#95cdcd",GradientType=1);
+  height: 110px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Press Start 2P", cursive;
+  font-size: 40px;
+  color: rgb(231, 231, 231);
+  padding-top: 20px;
+  border-radius: 10px;
+  border: 2px solid grey;
+  box-shadow: inset 0px 0px 15px black;
 }
 
