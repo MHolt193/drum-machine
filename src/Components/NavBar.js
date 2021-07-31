@@ -41,13 +41,12 @@ const NavBar = (props) => {
             <NavDropdown
               className="btn"
               title={<i class="fas fa-compact-disc"></i>}
-              onChange={props.modeHandler}
             >
-              <NavDropdown.Item>Drums</NavDropdown.Item>
+              <NavDropdown.Item onClick={props.modeHandler}>Drums</NavDropdown.Item>
               <NavDropdown.Divider />
-              <NavDropdown.Item>Guitar</NavDropdown.Item>
+              <NavDropdown.Item  onClick={props.modeHandler}>Guitar</NavDropdown.Item>
               <NavDropdown.Divider />
-              <NavDropdown.Item>Piano</NavDropdown.Item>
+              <NavDropdown.Item  onClick={props.modeHandler}>Piano</NavDropdown.Item>
             </NavDropdown>
             <Nav.Link className="info-btn btn">
               <i class="fas fa-info-circle"></i>

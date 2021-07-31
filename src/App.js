@@ -7,7 +7,7 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      mode: 'Guitar',
+      mode: 'Drums',
       volume: '0.5',
       power: 'false',
       sound: 'Loading...'
@@ -17,7 +17,7 @@ class App extends React.Component {
     this.powerHandler = this.powerHandler.bind(this);
   }
   modeHandler = (event) =>{
-    this.setState({mode: 'event.target.value'})
+    this.setState({mode: event.target.innerText})
   }
   volumeHandler = (event) =>{
     this.setState({volume:'event.target.volume'})

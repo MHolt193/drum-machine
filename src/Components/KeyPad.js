@@ -1,4 +1,7 @@
 import "./KeyPad.css";
+import guitar from './Sounds/Guitar/guitar'
+import drums from './Sounds/Drums/drums'
+import piano from './Sounds/Piano/piano'
 import React from "react";
 class KeyPad extends React.Component {
   constructor(props) {
@@ -8,13 +11,13 @@ class KeyPad extends React.Component {
     }
   }
   clickHandler(event){
-      document.getElementById('Q').play();
+      document.getElementById(event.target.innerText).play();
   }
   render() {
     return (
       <div className="container keypad">
         <div className="button-group">
-          <div
+          <button
             className={
              this.props.power === "false"
                 ? "btn drum-pad disabled"
@@ -24,161 +27,147 @@ class KeyPad extends React.Component {
             onClick={this.clickHandler.bind(this)}
           >Q
             <audio
-              src={guitar[0].src}
+              src={this.props.mode === "Guitar" ? guitar[0].src: this.props.mode === "Drums" ? drums[0].src: piano[0].src}
               className="clip"
               id='Q'
             />
-          </div>
-          <div
+          </button>
+          <button
             className={
               this.props.power === "false"
                 ? "btn drum-pad disabled"
                 : "btn drum-pad w"
             }
             id="sound2"
+            onClick={this.clickHandler.bind(this)}
           >
             W
-          </div>
-          <div
+            <audio
+              src={this.props.mode === "Guitar" ? guitar[1].src: this.props.mode === "Drums" ? drums[1].src: piano[1].src}
+              className="clip"
+              id='W'
+            />
+          </button>
+          <button
             className={
               this.props.power === "false"
                 ? "btn drum-pad disabled"
                 : "btn drum-pad e"
             }
             id="sound3"
+            onClick={this.clickHandler.bind(this)}
           >
             E
-          </div>
+            <audio
+              src={this.props.mode === "Guitar" ? guitar[2].src: this.props.mode === "Drums" ? drums[2].src: piano[2].src}
+              className="clip"
+              id='E'
+            />
+          </button>
         </div>
         <div className="button-group">
-          <div
+          <button
             className={
               this.props.power === "false"
                 ? "btn drum-pad disabled"
                 : "btn drum-pad a"
             }
             id="sound4"
+            onClick={this.clickHandler.bind(this)}
           >
             A
-          </div>
-          <div
+            <audio
+              src={this.props.mode === "Guitar" ? guitar[3].src: this.props.mode === "Drums" ? drums[3].src: piano[3].src}
+              className="clip"
+              id='A'
+            />
+          </button>
+          <button
             className={
              this.props.power === "false"
                 ? "btn drum-pad disabled"
                 : "btn drum-pad s"
             }
             id="sound5"
+            onClick={this.clickHandler.bind(this)}
           >
             S
-          </div>
-          <div
+            <audio
+              src={this.props.mode === "Guitar" ? guitar[4].src: this.props.mode === "Drums" ? drums[4].src: piano[4].src}
+              className="clip"
+              id='S'
+            />
+          </button>
+          <button
             className={
              this.props.power === "false"
                 ? "btn drum-pad disabled"
                 : "btn drum-pad d"
             }
             id="sound6"
+            onClick={this.clickHandler.bind(this)}
           >
             D
-          </div>
+            <audio
+              src={this.props.mode === "Guitar" ? guitar[5].src: this.props.mode === "Drums" ? drums[5].src: piano[5].src}
+              className="clip"
+              id='D'
+            />
+          </button>
         </div>
         <div className="button-group">
-          <div
+          <button
             className={
              this.props.power === "false"
                 ? "btn drum-pad disabled"
                 : "btn drum-pad z"
             }
             id="sound7"
+            onClick={this.clickHandler.bind(this)}
           >
             Z
-          </div>
-          <div
+            <audio
+              src={this.props.mode === "Guitar" ? guitar[6].src: this.props.mode === "Drums" ? drums[6].src: piano[6].src}
+              className="clip"
+              id='Z'
+            />
+          </button>
+          <button
             className={
              this.props.power === "false"
                 ? "btn drum-pad disabled"
                 : "btn drum-pad x"
             }
             id="sound8"
+            onClick={this.clickHandler.bind(this)}
           >
             X
-          </div>
-          <div
+            <audio
+              src={this.props.mode === "Guitar" ? guitar[7].src: this.props.mode === "Drums" ? drums[7].src: piano[7].src}
+              className="clip"
+              id='X'
+            />
+          </button>
+          <button
             className={
               this.props.power === "false"
                 ? "btn drum-pad disabled"
                 : "btn drum-pad c"
             }
             id="sound9"
+            onClick={this.clickHandler.bind(this)}
           >
             C
-          </div>
+            <audio
+              src={this.props.mode === "Guitar" ? guitar[8].src: this.props.mode === "Drums" ? drums[8].src: piano[8].src}
+              className="clip"
+              id='C'
+            />
+          </button>
         </div>
       </div>
     );
   }
 }
-const guitar = [
-  {
-    id: "Pluck",
-    keyCode: 81,
-    src: "./Sounds/Guitar/guitarpluking.mp3",
-    keyTrigger: "Q",
-  },
-  {
-      id: "Mellow-1",
-      keyCode: 87,
-      src: './Sounds/Guitar/mellow-guitar-chord-1.mp3',
-      keyTrigger: 'W'
-  },
-  {
-      id: "Mellow-2",
-      keyCode: 69,
-      src: './Sounds/Guitar/mellow-guitar-chord-2.mp3',
-      keyTrigger: 'E'
-  },
-  {
-      id: "Mellow-3",
-      keyCode: 65,
-      src: './Sounds/Guitar/mellow-guitar-chord-3.mp3',
-      keyTrigger: 'A'
 
-  },
-  {
-      id: 'Pluck-2',
-      keyCode: 83,
-      src: './Sounds/Guitar/plucking-guitar.mp3',
-      keyTrigger: 'S'
-  },
-  {
-      id: 'Guitar-Lick',
-      keyCode: 68,
-      src: './Sounds/Guitar/straight-up-guitarlick-9.mp3',
-      keyTrigger: 'D'
-  },
-  {
-      id: 'String-Slip',
-      keyCode: 90,
-      src: './Sounds/Guitar/stringslip.mp3',
-      keyTrigger: 'Z'
-
-  },
-  {
-      id: 'Twangy-Bendy',
-      keyCode: 88,
-      src: './Sounds/Guitar/twangybendy.mp3',
-      keyTrigger: 'X'
-  },
-  {
-      id: 'Wah-Down',
-      keyCode: 67,
-      src: './Sounds/Guitar/wah-down.mp3',
-      keyTrigger: 'C'
-  }
-];
-const drums = [
-{
-    
-}
-]
 export default KeyPad;
