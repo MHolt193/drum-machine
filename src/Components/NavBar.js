@@ -8,7 +8,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 const NavBar = (props) => {
   return (
     <Navbar className="ms-5 fixed-top navbar-dark" bg="dark">
-      <Container fluid='fluid'>
+      <Container fluid="fluid">
         {
           //Power Control
           props.power === "false" ? (
@@ -29,29 +29,35 @@ const NavBar = (props) => {
             </Navbar.Brand>
           )
         }
-          <Nav className="ms-auto">
-            <NavDropdown
-              className="btn"
-              title={<i class="fas fa-volume-up"></i>}
-            >
-              <NavDropdown.Item>
-                <Volume volume={props.volume} volumeHandler={props.volumeHandler} />
-              </NavDropdown.Item>
-            </NavDropdown>
-            <NavDropdown
-              className="btn"
-              title={<i class="fas fa-compact-disc"></i>}
-            >
-              <NavDropdown.Item onClick={props.modeHandler}>Drums</NavDropdown.Item>
-              <NavDropdown.Divider />
-              <NavDropdown.Item  onClick={props.modeHandler}>Guitar</NavDropdown.Item>
-              <NavDropdown.Divider />
-              <NavDropdown.Item  onClick={props.modeHandler}>Piano</NavDropdown.Item>
-            </NavDropdown>
-            <Nav.Link className="info-btn btn" onClick={props.info}>
-              <i class="fas fa-info-circle"></i>
-            </Nav.Link>
-          </Nav>
+        <Nav className="ms-auto">
+          <NavDropdown className="btn" title={<i class="fas fa-volume-up"></i>}>
+            <NavDropdown.Item>
+              <Volume
+                volume={props.volume}
+                volumeHandler={props.volumeHandler}
+              />
+            </NavDropdown.Item>
+          </NavDropdown>
+          <NavDropdown
+            className="btn"
+            title={<i class="fas fa-compact-disc"></i>}
+          >
+            <NavDropdown.Item onClick={props.modeHandler}>
+              Drums
+            </NavDropdown.Item>
+            <NavDropdown.Divider />
+            <NavDropdown.Item onClick={props.modeHandler}>
+              Guitar
+            </NavDropdown.Item>
+            <NavDropdown.Divider />
+            <NavDropdown.Item onClick={props.modeHandler}>
+              Piano
+            </NavDropdown.Item>
+          </NavDropdown>
+          <Nav.Link className="info-btn btn" onClick={props.info}>
+            <i class="fas fa-info-circle"></i>
+          </Nav.Link>
+        </Nav>
       </Container>
     </Navbar>
   );
