@@ -28,19 +28,19 @@
   justify-content: center;
   align-items: center;
   font-family: "Press Start 2P", cursive;
-  font-size: 35px;
+  font-size: 25px;
   color: rgb(231, 231, 231);
   padding-top: 20px;
   border-radius: 10px;
   border: 2px solid grey;
   box-shadow: inset 0px 0px 15px black;
 }
-.display p{
-    letter-spacing:-3px;
+.display p {
+  letter-spacing: -3px;
 }
 
-.display-off{
-    margin-top: 120px;
+.display-off {
+  margin-top: 120px;
   background: rgb(101, 135, 133);
   background: -moz-linear-gradient(
     150deg,
@@ -74,4 +74,3 @@
   border: 2px solid grey;
   box-shadow: inset 0px 0px 15px black;
 }
-
