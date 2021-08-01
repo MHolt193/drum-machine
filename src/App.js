@@ -12,14 +12,14 @@ class App extends React.Component {
       power: "false",
       sound: "Loading...",
       modalShow: false,
-    };//bind all handlers
+    }; //bind all handlers
     this.modeHandler = this.modeHandler.bind(this);
     this.volumeHandler = this.volumeHandler.bind(this);
     this.powerHandler = this.powerHandler.bind(this);
     this.clickHandler = this.clickHandler.bind(this);
     this.keyPressHandler = this.keyPressHandler.bind(this);
     this.setModalShow = this.setModalShow.bind(this);
-  }//define handlers
+  } //define handlers
   modeHandler = (event) => {
     this.setState({ mode: event.target.innerText });
   };
@@ -39,7 +39,7 @@ class App extends React.Component {
     this.setState({ sound: event.target.id });
   };
   keyPressHandler = (event) => {
-    if ("QWEASDZXC".includes(event.key.toUpperCase())) {
+    if ("QWEASDZXC".includes(event.key.toUpperCase()) && this.state.power ==='true') {
       let audio = document.getElementById(event.key.toUpperCase());
       audio.currentTime = 0;
       audio.volume = this.state.volume;
@@ -79,10 +79,7 @@ class App extends React.Component {
           mode={this.state.mode}
           power={this.state.power}
         />
-        <Info
-          show={this.state.modalShow}
-          onHide={this.setModalShow}
-        />
+        <Info show={this.state.modalShow} onHide={this.setModalShow} />
       </div>
     );
   }
