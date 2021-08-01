@@ -48,7 +48,7 @@ const NavBar = (props) => {
               <NavDropdown.Divider />
               <NavDropdown.Item  onClick={props.modeHandler}>Piano</NavDropdown.Item>
             </NavDropdown>
-            <Nav.Link className="info-btn btn">
+            <Nav.Link className="info-btn btn" onClick={props.info}>
               <i class="fas fa-info-circle"></i>
             </Nav.Link>
           </Nav>
