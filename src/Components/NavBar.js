@@ -35,7 +35,7 @@ const NavBar = (props) => {
               title={<i class="fas fa-volume-up"></i>}
             >
               <NavDropdown.Item>
-                <Volume onChange={props.volumeHandler} />
+                <Volume volume={props.volume} volumeHandler={props.volumeHandler} />
               </NavDropdown.Item>
             </NavDropdown>
             <NavDropdown
